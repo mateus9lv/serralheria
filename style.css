@@ -1,0 +1,38 @@
+:root {
+    --main-color: ##D9D9D9;
+    --black: #13131a;
+    --bg: #D9D9D9;
+    --borde: 0.1rem solid rgba(255,255,255,0.3);
+    font-size: 10px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2 linear;
+}
+
+body {
+    background-color:#D9D9D9;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: #13131a;
+}
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
