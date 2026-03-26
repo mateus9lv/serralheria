@@ -3,24 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serralheria C.G.K</title>
     <link rel="stylesheet" href="style.css">
-    <title>Serralheria CGK</title>
 </head>
 <body>
+
     <header>
-        <section>
-        <a href="#" class="logo">
-            <img src="./img/logo.jpg" alt="ckg">
-        </a>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#obras">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-        <nav class="container">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <button id="btn-contato">Agende seu orçamento</button>
-        </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Transformando Sonhos em Realidade</h2>
+            <p>Serralheria e Engenharia com alta qualidade técnica.</p>
+        </div>
     </section>
-</body>
+
+    <div class="container">
+        <section id="obras">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2>Nossas Obras</h2>
+            </div>
+            
+            <div class="grid-servicos">
+                <div class="card">
+                    <img src="img/fachada-predio.jpg" alt="Fachada">
+                    <h3>Fachadas</h3>
+                    <p>Acabamento premium para prédios comerciais.</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/ponte-madeira.jpg" alt="Ponte">
+                    <h3>Estruturas</h3>
+                    <p>Projetos especiais e pontes resistentes.</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/furo-piso.jpg" alt="Piso">
+                    <h3>Instalações</h3>
+                    <p>Precisão técnica em cada detalhe da obra.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
