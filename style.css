@@ -1,10 +1,15 @@
-/* Estilos Globais */
+/* --- Estilos Globais e Variáveis --- */
 :root {
     --azul-gng: #004a8e;
     --azul-escuro: #003366;
     --cinza-claro: #f4f4f4;
     --texto: #333;
     --branco: #ffffff;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -13,9 +18,18 @@ body {
     padding: 0;
     color: var(--texto);
     line-height: 1.6;
+    background-color: #fff;
 }
 
-/* Header e Navegação */
+/* --- Container Principal --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- Header e Navegação --- */
 header {
     background-color: var(--branco);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -24,19 +38,16 @@ header {
     z-index: 1000;
 }
 
-.container {
-    width: 85%;
-    max-width: 1200px;
-    margin: auto;
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
 }
 
-/* Logo usando a imagem do GitHub */
 .logo img {
     height: 50px; /* Ajuste conforme necessário */
+    width: auto;
 }
 
 nav ul {
@@ -63,13 +74,14 @@ nav ul li a:hover {
     color: var(--azul-gng);
 }
 
-/* Banner Principal - Usando imagem da pasta img */
+/* --- Banner Principal (Hero) --- */
 .hero {
+    /* Usando imagem da sua pasta img */
     background: linear-gradient(rgba(0, 74, 142, 0.7), rgba(0, 74, 142, 0.7)),
-                url('img/estrutura.jpg'); /* Atualizado para sua imagem */
+                url('img/estrutura.jpg'); 
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,35 +90,113 @@ nav ul li a:hover {
 }
 
 .hero-content h2 {
-    font-size: 45px;
+    font-size: 40px;
     margin-bottom: 10px;
 }
 
-/* Grid de Obras/Serviços */
-.grid-servicos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: var(--cinza-claro);
-    border-radius: 5px;
-    overflow: hidden;
+/* --- Títulos de Seção --- */
+.section-title {
     text-align: center;
-    transition: transform 0.3s;
-    padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
-.card img {
+.section-title h2 {
+    color: var(--azul-gng);
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+/* --- ESTRUTURA DO CARROSSEL (SLIDER) --- */
+
+/* Container externo que limita a área visível */
+.carousel-container {
+    position: relative;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    max-width: 800px; /* Largura máxima do slide */
+    margin: 0 auto; /* Centraliza na tela */
+    overflow: hidden; /* Esconde o que está fora da área principal */
+    border-radius: 8px;
+    box-shadow: var(--sombra);
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-bottom: 4px solid var(--azul-gng);
+/* O "trem" que carrega todos os slides lado a lado */
+.carousel-slide {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Animação suave */
 }
 
-/* Rodapé e Responsividade omitidos aqui para brevidade, mas devem ser mantidos */
+/* Estilo de cada item individual do slide */
+.carousel-item {
+    min-width: 100%; /* Cada item ocupa 100% da largura do container */
+    position: relative;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Faz a imagem cobrir a área sem distorcer */
+    display: block;
+}
+
+/* Legenda sobre a imagem */
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    color: #fff;
+    padding: 15px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.carousel-caption h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.carousel-caption p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* --- BOTÕES DE NAVEGAÇÃO --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--azul-gng);
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10; /* Garante que fique sobre a imagem */
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Posição específica de cada botão */
+#prevBtn {
+    left: 15px;
+}
+
+#nextBtn {
+    right: 15px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .hero-content h2 { font-size: 28px; }
+    .carousel-item img { height: 250px; }
+    .carousel-caption h3 { font-size: 1rem; }
+    .carousel-btn { font-size: 18px; padding: 8px 12px; }
+}
