@@ -101,6 +101,10 @@ h2, h3, .section-title h2 {
     background-color: var(--azul-secao);
     border: 1px solid var(--amarelo-dark);
 }
+.section-title h2 {
+    border-bottom: 2px solid var(--amarelo-ouro);
+    padding-bottom: 10px;
+}
 
 .card-info h3 {
     color: var(--amarelo-ouro);
