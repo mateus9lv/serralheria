@@ -101,6 +101,18 @@ h2, h3, .section-title h2 {
     background-color: var(--azul-secao);
     border: 1px solid var(--amarelo-dark);
 }
+/* Centraliza o título da seção de obras */
+.section-title {
+    text-align: center; /* Alinha o texto no meio */
+    width: 100%;        /* Garante que ele ocupe toda a largura disponível */
+    margin-bottom: 30px; /* Dá um respiro entre o título e o carrossel */
+}
+
+.section-title h2 {
+    display: inline-block; /* Faz com que o elemento se comporte bem na centralização */
+    color: var(--amarelo-ouro); /* Mantém sua cor padrão */
+    text-transform: uppercase;
+}
 .section-title h2 {
     border-bottom: 2px solid var(--amarelo-ouro);
     padding-bottom: 10px;
@@ -108,6 +120,7 @@ h2, h3, .section-title h2 {
 
 .card-info h3 {
     color: var(--amarelo-ouro);
+
 }
 
 input, select, textarea {
