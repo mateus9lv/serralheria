@@ -37,19 +37,21 @@
             <h2>Conheça nosso Trabalho</h2>
         </div>
         
-        <div class="carousel-container">
-            <button class="carousel-btn" id="prevBtn">&#10094;</button> 
-            <button class="carousel-btn" id="nextBtn">&#10095;</button> 
-            
-            <div class="carousel-slide">
-                <div class="carousel-item">
-                    <img src="img/fachada-predio.jpg" alt="Fachada de Prédio Comercial">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/ponte-madeira.jpg" alt="Ponte de Madeira">
-                    <div class="carousel-caption">
-                        <h3>Estruturas Especiais</h3>
-                        <p>Projetos complexos e pontes resistentes.</p>
+        <div class="container">
+            <div class="carousel-container">
+                <button class="carousel-btn" id="prevBtn">&#10094;</button> 
+                <button class="carousel-btn" id="nextBtn">&#10095;</button> 
+                
+                <div class="carousel-slide">
+                    <div class="carousel-item">
+                        <img src="img/fachada-predio.jpg" alt="Fachada de Prédio">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/ponte-madeira.jpg" alt="Ponte de Madeira">
+                        <div class="carousel-caption">
+                            <h3>Estruturas Especiais</h3>
+                            <p>Projetos complexos e pontes resistentes.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,55 +59,57 @@
     </section>
 
     <section id="moveis" class="section-padding">
-        <div class="section-title">
-            <h2>Móveis de Fabricação Própria</h2>
-            <p>Design industrial com a resistência do aço.</p>
-        </div>
-        <div class="container grid-moveis">
-            <div class="card-movel">
-                <img src="img/movel1.jpg" alt="Mesa Industrial">
-                <div class="card-info">
-                    <h3>Mesa Industrial GNG</h3>
-                    <p>Aço carbono com tampo em madeira maciça.</p>
-                    <span class="preco">Consulte Valor</span>
-                </div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Móveis de Fabricação Própria</h2>
+                <p>Design industrial com a resistência do aço.</p>
             </div>
-            <div class="card-movel">
-                <img src="img/movel2.jpg" alt="Estante de Ferro">
-                <div class="card-info">
-                    <h3>Estante Minimalista</h3>
-                    <p>Pintura eletrostática preta fosca.</p>
-                    <span class="preco">Consulte Valor</span>
+            <div class="grid-moveis">
+                <div class="card-movel">
+                    <img src="img/movel1.jpg" alt="Mesa Industrial">
+                    <div class="card-info">
+                        <h3>Mesa Industrial GNG</h3>
+                        <p>Aço carbono com tampo em madeira maciça.</p>
+                        <span class="preco">Consulte Valor</span>
+                    </div>
+                </div>
+                <div class="card-movel">
+                    <img src="img/movel2.jpg" alt="Estante de Ferro">
+                    <div class="card-info">
+                        <h3>Estante Minimalista</h3>
+                        <p>Pintura eletrostática preta fosca.</p>
+                        <span class="preco">Consulte Valor</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="processo" class="section-padding">
-        <div class="section-title">
-            <h2>Nossa Forja</h2>
-            <p>Veja como transformamos matéria-prima em arte.</p>
-        </div>
-        <div class="container video-grid">
-            <div class="video-container">
-                <video autoplay muted loop playsinline>
-                    <source src="video/solda-processo.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeos.
-                </video>
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Forja</h2>
+                <p>Veja como transformamos matéria-prima em arte.</p>
             </div>
-            <div class="processo-texto">
-                <h3>Qualidade em cada centelha</h3>
-                <p>Utilizamos os melhores processos de soldagem e acabamento para garantir que sua estrutura ou móvel dure gerações.</p>
+            <div class="video-grid">
+                <div class="video-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="video/solda-processo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="processo-texto">
+                    <h3>Qualidade em cada centelha</h3>
+                    <p>Utilizamos os melhores processos de soldagem e acabamento para garantir durabilidade.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contato" class="section-padding">
-        <div class="section-title">
-            <h2>Solicite um Orçamento</h2>
-            <p>Traga seu projeto para quem entende de engenharia metálica.</p>
-        </div>
         <div class="container">
+            <div class="section-title">
+                <h2>Solicite um Orçamento</h2>
+            </div>
             <form id="form-orcamento">
                 <div class="form-group">
                     <input type="text" placeholder="Seu Nome" required>
@@ -115,16 +119,15 @@
                     <option value="">Selecione o Serviço</option>
                     <option value="estruturas">Estruturas Metálicas</option>
                     <option value="moveis">Móveis Sob Medida</option>
-                    <option value="reformas">Reformas e Manutenção</option>
                 </select>
-                <textarea placeholder="Fale brevemente sobre o que você precisa..." rows="5"></textarea>
-                <button type="submit" class="btn-enviar">Enviar Pedido de Orçamento</button>
+                <textarea placeholder="Detalhes do projeto..." rows="5"></textarea>
+                <button type="submit" class="btn-enviar">Enviar Pedido</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 GNG Serralheria e Mobiliaria. Todos os direitos reservados.</p>
+        <p>&copy; 2024 GNG Serralheria e Mobiliaria.</p>
     </footer>
 
     <script src="script.js"></script>
