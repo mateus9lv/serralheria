@@ -1,45 +1,27 @@
-:root {
-    --azul-fundo: #000c1a; 
-    --azul-secao: #001529; 
-    --amarelo-ouro: #FFD700; 
-    --amarelo-dark: #ccac00;
-    --branco: #ffffff;
-}
-
-* { 
-    box-sizing: border-box; 
-    scroll-behavior: smooth; 
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--azul-fundo); 
-    color: var(--branco);
-    background-image: url('img/logo.png');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 35%;
-    background-blend-mode: overlay;
+    background-color: #0d1117; /* Fundo escuro como no print */
+    color: white;
 }
 
 .container {
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-.section-padding { padding: 60px 0; }
-
-/* --- HEADER E MENU --- */
+/* Header e Logo */
 header {
-    background-color: var(--azul-fundo);
-    border-bottom: 1px solid var(--amarelo-ouro);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: #161b22;
     padding: 15px 0;
+    border-bottom: 1px solid #30363d;
 }
 
 .header-flex {
@@ -48,139 +30,153 @@ header {
     align-items: center;
 }
 
-.logo img { height: 50px; width: auto; }
+.logo img {
+    height: 50px; /* Ajusta o tamanho da sua logo.jpg */
+    width: auto;
+}
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
 nav ul li a {
+    color: #e6edf3;
     text-decoration: none;
-    color: var(--amarelo-ouro) !important; 
-    font-weight: 700;
+    margin-left: 20px;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    font-size: 14px;
 }
 
-nav ul li a:hover {
-    color: var(--branco) !important;
-    text-shadow: 0 0 8px var(--amarelo-ouro);
+/* Carrossel (Obras) */
+.section-padding {
+    padding: 60px 0;
 }
 
-/* --- HERO --- */
-.hero { height: 180px; display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero h2 { color: var(--amarelo-ouro); text-transform: uppercase; letter-spacing: 2px; }
-
-/* --- TÍTULOS CENTRALIZADOS --- */
 .section-title {
-    text-align: center; 
-    width: 100%; 
-    margin-bottom: 40px; 
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.section-title h2 {
-    display: inline-block;
-    color: var(--amarelo-ouro);
-    text-transform: uppercase;
-    border-bottom: 2px solid var(--amarelo-ouro);
-    padding-bottom: 10px;
-    margin: 0;
-}
-
-/* --- CARROSSEL --- */
 .carousel-container {
     position: relative;
-    border: 2px solid var(--amarelo-ouro);
-    border-radius: 12px;
     overflow: hidden;
-    max-width: 1000px;
-    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.carousel-slide { display: flex; transition: transform 0.6s ease-in-out; }
-.carousel-item { min-width: 100%; flex-shrink: 0; }
-.carousel-item img { width: 100%; height: 500px; object-fit: cover; display: block; }
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px; /* Altura fixa para não quebrar o layout */
+    object-fit: cover; /* Faz a imagem preencher o espaço sem esticar */
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Botões do Carrossel */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--amarelo-ouro);
-    background: rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
     border: none;
-    font-size: 30px;
     padding: 15px;
     cursor: pointer;
     z-index: 10;
+    border-radius: 50%;
 }
-.prev { left: 0; }
-.next { right: 0; }
 
-/* --- GRID MÓVEIS --- */
-.grid-moveis { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Grid de Móveis e Serviços */
+.grid-moveis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
 
 .card-movel {
-    background-color: var(--azul-secao);
-    border: 1px solid var(--amarelo-dark);
-    border-radius: 10px;
+    background: #161b22;
+    border-radius: 8px;
     overflow: hidden;
-    text-align: center;
+    border: 1px solid #30363d;
+    transition: transform 0.3s;
 }
 
-.card-movel img { width: 100%; height: 250px; object-fit: cover; }
-.card-info { padding: 20px; }
-.card-info h3 { color: var(--amarelo-ouro); margin: 0; }
-
-/* --- FORMULÁRIO --- */
-#form-orcamento { 
-    max-width: 600px; 
-    margin: 0 auto; 
-    background-color: var(--azul-secao); 
-    padding: 30px; 
-    border-radius: 10px; 
+.card-movel:hover {
+    transform: translateY(-5px);
 }
 
-.form-group { display: flex; gap: 15px; margin-bottom: 15px; }
+.card-movel img {
+    width: 100%;
+    height: 250px; /* Altura padrão para as imagens de serviços */
+    object-fit: cover;
+}
 
-input, select, textarea {
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    color: #f0ad4e; /* Amarelo destaque para combinar com a logo */
+    margin-bottom: 10px;
+}
+
+/* Formulário e Rodapé */
+#form-orcamento {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
     width: 100%;
     padding: 12px;
-    background-color: var(--azul-fundo);
-    border: 1px solid var(--amarelo-dark);
-    color: var(--branco);
-    border-radius: 5px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: white;
+    border-radius: 4px;
 }
 
 .btn-enviar {
-    background-color: var(--amarelo-ouro);
-    color: var(--azul-fundo);
-    font-weight: bold;
-    border: none;
-    padding: 15px;
     width: 100%;
+    padding: 15px;
+    background: #f0ad4e;
+    border: none;
+    font-weight: bold;
     cursor: pointer;
-    text-transform: uppercase;
-    transition: 0.3s;
+    border-radius: 4px;
 }
 
-.btn-enviar:hover { background-color: var(--amarelo-dark); }
-
-/* --- FOOTER --- */
 footer {
-    background-color: var(--azul-fundo);
-    color: var(--amarelo-ouro);
-    border-top: 1px solid var(--amarelo-ouro);
-    padding: 20px 0;
     text-align: center;
-}
-
-@media (max-width: 768px) {
-    .header-flex { flex-direction: column; gap: 15px; }
-    .form-group { flex-direction: column; }
-    nav ul { gap: 15px; }
+    padding: 40px 0;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
 }
